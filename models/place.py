@@ -32,3 +32,26 @@ class Place(BaseModel, Base):
     latitude = Column(Float)
     longitude = Column(Float)
     amenity_ids = []
+    reviews = relationship('Review', 
+                            cascade="all, delete, delete-orphan",
+                            backref="place"
+                            )
+
+    @property
+    def reviews(self):
+        """
+        Handle The relationship between Place and Review
+        for FileStorage
+        """
+        var = models.storage.all()
+        review_list = []
+        result = []
+        for key in var:
+            review = key.replace('.', ' ')
+            review = shlex.split(review)
+            if (review[0] == 'Review'):
+                review_list.append(var[key])
+        for obj in review_list:
+            if (obj.place_id == self.id):
+                result.append(obj)
+        return (result)
