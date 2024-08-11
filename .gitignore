@@ -5,3 +5,5 @@ setup_mysql_test2.sql
 .vscode
 .gitignore
 main_delete.py
+fabfile.py
+pack_web_static_for_fab3x.py
