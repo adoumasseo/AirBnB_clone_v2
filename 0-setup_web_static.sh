@@ -4,7 +4,7 @@
 apt-get update
 apt-get install -y nginx
 
-mkdir -p /data/web_static/releases/text/
+mkdir -p /data/web_static/releases/test/
 mkdir -p /data/web_static/shared/
 echo "Hy everyone sup ??" > /data/web_static/releases/test/index.html
 
