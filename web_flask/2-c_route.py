@@ -41,7 +41,7 @@ def hello_C(text):
         No Arguments
     """
     new_text = text.replace("_", " ")
-    return "C {}".format(escape(new_text)
+    return "C {}".format(escape(new_text))
 
 
 if __name__ == "__main__":
