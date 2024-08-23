@@ -8,3 +8,4 @@ main_delete.py
 fabfile.py
 pack_web_static_for_fab3x.py
 ./web_flask/.venv/*
+./.venv/*
