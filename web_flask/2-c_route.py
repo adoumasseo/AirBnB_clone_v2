@@ -7,7 +7,7 @@
         Listening on 0.0.0.0 port 5000
 """
 
-
+from markupsafe import escape
 from flask import Flask
 
 app = Flask(__name__)
@@ -26,11 +26,22 @@ def hello_world():
 @app.route("/hbnb", strict_slashes=False)
 def hello_hbnb():
     """
-        This Function is Trigger with / route
-        and Return Hello HBNB
+        This Function is Trigger with /hbnb route
+        and Return HBNB
         No Arguments
     """
     return "HBNB"
+
+
+@app.route("/c/<text>", strict_slashes=False)
+def hello_C(text):
+    """
+        This Function is Trigger with /c/<text> route
+        and Return HBNB
+        No Arguments
+    """
+    new_text = text.replace("_", " ")
+    return "C {}".format(escape(new_text)
 
 
 if __name__ == "__main__":
