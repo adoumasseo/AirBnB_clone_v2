@@ -11,6 +11,7 @@ from os import getenv
 
 STORAGE_TYPE = getenv("HBNB_TYPE_STORAGE")
 
+
 class State(BaseModel, Base):
     """This is the class for State
     Attributes:
